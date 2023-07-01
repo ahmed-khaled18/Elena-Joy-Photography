@@ -24,10 +24,10 @@ html {
     font-size: 62.5%;
     scroll-behavior: smooth;
     --header1: calc(1.5rem + 1vw);
-    --header2: calc(3.5rem + 1vw);
-    --header3: calc(3rem + 1vw);
-    --header4: calc(2.4rem + 1vw);
-    --text-size: calc(1.5rem + 1vw);
+    --header2: calc(2rem + 1vw);
+    --header3: calc(2.5rem + 1vw);
+    --header4: calc(3rem + 1vw);
+    --text-size: calc(0.5rem + 1vw);
     --big: calc(2.5rem + 1vw);
     --special-color: #906272;
     --background-color: #414141;
@@ -127,6 +127,7 @@ nav {
 
 .hero-intoduction p {
     padding: 5rem 10rem;
+    color: var(--gray-text);
 }
 
 .hero-intoduction h2 {
@@ -200,8 +201,57 @@ nav {
     }
 }
 
-.burger,.menue-check {
+.burger,
+.menue-check {
     display: none;
+}
+
+/*ABOUT SECTION*/
+
+.about {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    flex: 1 1 40rem;
+    position: relative;
+}
+
+.about-image h3 {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    letter-spacing: 2rem;
+}
+.about-image img {
+    max-height: 100vh;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 2 1 40rem;
+    justify-content: space-around;
+    color: white;
+    background: var(--background-color);
+}
+
+.about-text h2 {
+    padding: 1rem 0rem;
+    font-family: "Ruhl Medium";
+}
+
+.about-text h3 {
+    padding: 3rem;
+    font-family: "Vibes";
+}
+
+.about-text div {
+    padding: 3rem 8rem;
 }
 
 @media screen and (max-width:842px) {
@@ -212,11 +262,12 @@ nav {
     .hero-intoduction p {
         padding: 5rem 3rem;
     }
-    .burger{
+
+    .burger {
         position: relative;
         display: block;
     }
-    
+
     .burger span {
         padding: 0.2rem 2rem;
         margin: 0.5rem 0rem;
@@ -256,21 +307,28 @@ nav {
         z-index: 100;
     }
 
-    .menue-check:checked + .nav-links {
+    .menue-check:checked+.nav-links {
         transform: translateX(-100%);
     }
 
-    .menue-check:checked ~ .burger span {
+    .menue-check:checked~.burger span {
         background: white;
     }
 
-    .menue-check:checked ~ .burger span:nth-child(1){
+    .menue-check:checked~.burger span:nth-child(1) {
         transform: rotateZ(45deg) translateY(300%);
     }
-    .menue-check:checked ~ .burger span:nth-child(2){
+
+    .menue-check:checked~.burger span:nth-child(2) {
         opacity: 0;
     }
-    .menue-check:checked ~ .burger span:nth-child(3){
+
+    .menue-check:checked~.burger span:nth-child(3) {
         transform: rotateZ(-45deg) translateY(-300%);
+    }
+
+    /*About Section*/
+    .about-text div {
+        padding: 3rem;
     }
 }
