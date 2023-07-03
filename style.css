@@ -357,4 +357,15 @@ nav {
     .about-text div {
         padding: 3rem;
     }
+
+    /*Gallery Section*/
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    }
+
+    .gallery img {
+        grid-column: auto;
+        grid-row: auto;
+    }
 }
